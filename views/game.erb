@@ -1,0 +1,27 @@
+<h4>Blackjack Game Screen</h4>
+</br>
+<p>Hello <%= session[:player_name] %></p>
+
+Dealer's cards:
+
+<ul>
+  <% session[:dealer_cards].each do |card| %>
+  <li><%= card.to_s %></li>
+  <% end %>
+</ul>
+<p>
+  Dealer has <%= calculate_total(session[:dealer_cards]) %>
+</p>
+</br>
+
+<%= session[:player_name] %>'s cards:
+<ul>
+  <% session[:player_cards].each do |card| %>
+  <li><%= card.to_s %></li>
+  <% end %>
+</ul>
+
+<p>
+ 
+  What would you like to do? <%= session[:player_name] %> has <%= calculate_total(session[:player_cards]) %>
+</p>
