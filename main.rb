@@ -7,14 +7,14 @@ set :sessions, true
 BLACKJACK_AMOUNT = 21
 DEALER_MIN = 17
 INITIAL_POT_AMOUNT = 500
-#use Rack::Session::Cookie, :key => 'rack.session',
-#:path => '/',
-#:secret => 'ctecastronomy'
+use Rack::Session::Cookie, :key => 'rack.session',
+:path => '/',
+:secret => 'ctecastronomy'
 
-configure :development do
-  set :bind, '0.0.0.0'
-  set :port, 3000
-end
+#configure :development do
+ # set :bind, '0.0.0.0'
+  #set :port, 3000
+#end
 
 helpers do
   def calculate_total(cards)
