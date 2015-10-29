@@ -3,7 +3,7 @@ require 'sinatra'
 require 'erb'
 require 'pry'
 
-set :sessions, true
+#set :sessions, true
 BLACKJACK_AMOUNT = 21
 DEALER_MIN = 17
 INITIAL_POT_AMOUNT = 500
