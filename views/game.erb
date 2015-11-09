@@ -1,4 +1,10 @@
 <div id='game'>
+    <%if @loser %>
+      <div class="alert alert-error"><%=@loser%></div>
+    <% end %>
+    <%if @winner %>
+      <div class="alert alert-success"><%=@winner%></div>
+    <% end %>
 <h4>Blackjack Game Screen</h4>
 <br/>
 <p>Hello <%= session[:player_name] %></p>
@@ -24,7 +30,7 @@
   <% if @show_dealer_hit_button %>
   <p>
   <h5>Dealer has <%= calculate_total(session[:dealer_cards])%> and will hit.</h5>
-  <form action='/game/dealer/hit' method='post'>
+  <form id="dealer_hit" action='/game/dealer/hit' method='post'>
   <input type='submit' class='btn btn-primary' value='Click to see dealer card &rarr;'
   >
   </form>
@@ -61,5 +67,3 @@
   <% end %>
 <!--/p -->
 </div>
-
-
